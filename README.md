@@ -9,6 +9,9 @@ Note the below relies on the camera being connected to the same WLAN (WIFI) netw
  the camera will show it is connected to a wifi network (and not broadcasting one) if both front lights are off. 
 however, by default in this mode the camera will broadcast a network, this could be used though I haven't tested it. 
 
+One point to note is that the below relies on `cv2.waitKey(1)` to exit, so if you are running headless it won't exit 
+cleanly. Sorry.  
+
 ```python
 import time
 
