@@ -1,6 +1,11 @@
 # my_mu3
 A small project to grab and parse images from the MU3 Vision Sensor in a seperate process (to free up CPU).
 
+## Installation
+```
+pip install my-mu3
+```
+
 ## API Usage
 
 Note the below relies on the camera being connected to the same WLAN (WIFI) network as the computer. Also note that
