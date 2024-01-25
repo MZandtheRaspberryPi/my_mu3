@@ -10,6 +10,7 @@ JPEG_IMAGE_START_MARKER = b"\xff\xd8"
 JPEG_IMAGE_END_MARKER = b"\xff\xd9"
 EXPECTED_SIZE = (240, 180)
 NUM_CHANNELS = 3 # we have R,G,B
+NUM_IMAGE_BYTES = EXPECTED_SIZE[0] * EXPECTED_SIZE[1] * NUM_CHANNELS
 
 
 class Mu3ImageGrabber:
@@ -76,7 +77,7 @@ class Mu3ImageGrabber:
                 byte_arr = byte_arr[end_of_image + 2:]
                 np_arr = np.frombuffer(raw_bytes, dtype=np.uint8)
                 image = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
-                if image is None or image.size != EXPECTED_SIZE[0] * EXPECTED_SIZE[1] * NUM_CHANNELS:
+                if image is None or image.size != NUM_IMAGE_BYTES:
                         continue
                 else:
                     num_images_from_cam.value += 1

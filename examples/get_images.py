@@ -8,7 +8,7 @@ IP_ADDRESS = "192.168.1.183"
 
 def main():
 
-    my_mu3 = Mu3ImageGrabber(ip_address=IP_ADDRESS)
+    my_mu3 = Mu3ImageGrabber(ip_address=IP_ADDRESS, byte_chunksize=1024)
 
     exit_flag = False
     my_mu3.start()
