@@ -1,6 +1,6 @@
 [project]
 name = "my-mu3"
-version = "0.0.0"
+version = "0.0.1"
 authors = [
     { name = "MZandtheRaspberryPi", email = "mzandtheraspberrypi@gmail.com" },
 ]
