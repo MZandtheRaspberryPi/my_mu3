@@ -45,6 +45,8 @@ class Mu3ImageGrabber:
 
     def stop(self):
         self.exit_flag.value = 1
+        while not self.queue.empty():
+            self.queue.get()
         self.sub_process.join()
         fps = self.num_images_from_camera.value / (time.time() - self.start_time)
         print(f"fps: {round(fps, 2)}")
@@ -81,4 +83,5 @@ class Mu3ImageGrabber:
                         continue
                 else:
                     num_images_from_cam.value += 1
+                    # if the queue is full this will block
                     my_queue.put(image)
